@@ -79,15 +79,15 @@ class ThermostatTest {
         assertFalse(thermo.turnHeaterOn(settings));
     }
 
-//    @org.junit.jupiter.api.Test
-//    void CACCTestTurnHeaterOn() {
-//
-//        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 60);
-//        thermo.setCurrentTemp (63);
-//        thermo.setThresholdDiff (5);
-//        thermo.setOverride (true);
-//        thermo.setOverTemp (67); // c is false
-//        thermo.setMinLag (10);
-//        thermo.setTimeSinceLastRun (12);
-//    }
+    @org.junit.jupiter.api.Test
+    void CACCTestTurnHeaterOn() {
+        // The CACC test of TTFT
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp (63);
+        thermo.setThresholdDiff (5);
+        thermo.setOverride (true);
+        thermo.setOverTemp (67); // c is false
+        thermo.setMinLag (10);
+        thermo.setTimeSinceLastRun (12);
+    }
 }
