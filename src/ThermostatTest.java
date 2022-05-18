@@ -89,6 +89,7 @@ class ThermostatTest {
         thermo.setOverTemp (67);
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (12);
+        assertTrue(thermo.turnHeaterOn(settings));
     }
 
     @org.junit.jupiter.api.Test
@@ -101,6 +102,7 @@ class ThermostatTest {
         thermo.setOverTemp (67); // c is false
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (12);
+        assertTrue(thermo.turnHeaterOn(settings));
     }
 
     @org.junit.jupiter.api.Test
@@ -113,6 +115,7 @@ class ThermostatTest {
         thermo.setOverTemp (72);
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (12);
+        assertTrue(thermo.turnHeaterOn(settings));
 
     }
 
@@ -126,6 +129,7 @@ class ThermostatTest {
         thermo.setOverTemp (72);
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (12);
+        assertTrue(thermo.turnHeaterOn(settings));
     }
 
     @org.junit.jupiter.api.Test
@@ -138,6 +142,7 @@ class ThermostatTest {
         thermo.setOverTemp (72);
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (12);
+        assertTrue(thermo.turnHeaterOn(settings));
     }
 
     @org.junit.jupiter.api.Test
@@ -150,5 +155,6 @@ class ThermostatTest {
         thermo.setOverTemp (72);
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (8);
+        assertTrue(thermo.turnHeaterOn(settings));
     }
 }
