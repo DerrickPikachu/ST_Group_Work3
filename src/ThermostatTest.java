@@ -81,13 +81,74 @@ class ThermostatTest {
 
     @org.junit.jupiter.api.Test
     void CACCTestTurnHeaterOn() {
-        // The CACC test of TTFT
+        // The CACC test of TTFT (1)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (63);
+        thermo.setThresholdDiff (5);
+        thermo.setOverride (true);
+        thermo.setOverTemp (67);
+        thermo.setMinLag (10);
+        thermo.setTimeSinceLastRun (12);
+    }
+
+    @org.junit.jupiter.api.Test
+    void CACCTestTurnHeaterOn() {
+        // The CACC test of FTFT (2)
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp (66); // a is false
         thermo.setThresholdDiff (5);
         thermo.setOverride (true);
         thermo.setOverTemp (67); // c is false
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (12);
+    }
+
+    @org.junit.jupiter.api.Test
+    void CACCTestTurnHeaterOn() {
+        // The CACC test of FTTT (3)
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp (66); 
+        thermo.setThresholdDiff (5);
+        thermo.setOverride (true);
+        thermo.setOverTemp (72);
+        thermo.setMinLag (10);
+        thermo.setTimeSinceLastRun (12);
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void CACCTestTurnHeaterOn() {
+        // The CACC test of FFTT (4)
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp (66); 
+        thermo.setThresholdDiff (5);
+        thermo.setOverride (false);
+        thermo.setOverTemp (72);
+        thermo.setMinLag (10);
+        thermo.setTimeSinceLastRun (12);
+    }
+
+    @org.junit.jupiter.api.Test
+    void CACCTestTurnHeaterOn() {
+        // The CACC test of TTTT (5)
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp (63);
+        thermo.setThresholdDiff (5);
+        thermo.setOverride (true);
+        thermo.setOverTemp (72);
+        thermo.setMinLag (10);
+        thermo.setTimeSinceLastRun (12);
+    }
+
+    @org.junit.jupiter.api.Test
+    void CACCTestTurnHeaterOn() {
+        // The CACC test of TTTF (6)
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp (63);
+        thermo.setThresholdDiff (5);
+        thermo.setOverride (true);
+        thermo.setOverTemp (72);
+        thermo.setMinLag (10);
+        thermo.setTimeSinceLastRun (8);
     }
 }
