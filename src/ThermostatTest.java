@@ -80,7 +80,7 @@ class ThermostatTest {
     }
 
     @org.junit.jupiter.api.Test
-    void CACCTestTurnHeaterOn() {
+    void CACCTestTurnHeaterOn1() {
         // The CACC test of TTFT (1)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (63);
@@ -93,7 +93,7 @@ class ThermostatTest {
     }
 
     @org.junit.jupiter.api.Test
-    void CACCTestTurnHeaterOn() {
+    void CACCTestTurnHeaterOn2() {
         // The CACC test of FTFT (2)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (66); // a is false
@@ -106,7 +106,7 @@ class ThermostatTest {
     }
 
     @org.junit.jupiter.api.Test
-    void CACCTestTurnHeaterOn() {
+    void CACCTestTurnHeaterOn3() {
         // The CACC test of FTTT (3)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (66); 
@@ -120,7 +120,7 @@ class ThermostatTest {
     }
 
     @org.junit.jupiter.api.Test
-    void CACCTestTurnHeaterOn() {
+    void CACCTestTurnHeaterOn4() {
         // The CACC test of FFTT (4)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (66); 
@@ -133,7 +133,7 @@ class ThermostatTest {
     }
 
     @org.junit.jupiter.api.Test
-    void CACCTestTurnHeaterOn() {
+    void CACCTestTurnHeaterOn5() {
         // The CACC test of TTTT (5)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (63);
@@ -146,7 +146,7 @@ class ThermostatTest {
     }
 
     @org.junit.jupiter.api.Test
-    void CACCTestTurnHeaterOn() {
+    void CACCTestTurnHeaterOn6() {
         // The CACC test of TTTF (6)
         settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
         thermo.setCurrentTemp (63);
@@ -155,6 +155,6 @@ class ThermostatTest {
         thermo.setOverTemp (72);
         thermo.setMinLag (10);
         thermo.setTimeSinceLastRun (8);
-        assertTrue(thermo.turnHeaterOn(settings));
+        assertFalse(thermo.turnHeaterOn(settings));
     }
 }
