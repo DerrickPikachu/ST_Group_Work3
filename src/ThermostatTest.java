@@ -45,9 +45,11 @@ class ThermostatTest {
 
     @org.junit.jupiter.api.Test
     void PCTestFalseTurnHeaterOn() {
-        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 60);
-        thermo.setCurrentTemp(69);
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setCurrentTemp(60);
         thermo.setThresholdDiff(5);
+        thermo.setOverride(true);
+        thermo.setOverTemp(70);
         thermo.setMinLag(10);
         thermo.setTimeSinceLastRun(5);
         assertFalse(thermo.turnHeaterOn(settings));
